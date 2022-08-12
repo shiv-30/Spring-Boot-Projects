@@ -1,0 +1,23 @@
+<!doctype>
+<html xmlns:th="http://www.thymeleaf.com">
+	<head>
+		<title>Registration</title>
+	</head>
+	<body>
+		<h1 style="text-align:center;">Registration Form</h1>
+		<form style="text-align:center;"  method="POST" action="/doLogin">
+			<br/>
+			<br/>
+			User name: <input name="username" type="text" required>
+			<br/>
+			<br/>
+			Email: <input name="email" type="email" required>
+			<br/>
+			<br/>
+			Password: <input name="password" type="password" required>
+			<br/>
+			<br/>
+			<button type="submit">Submit</button>
+		</form>		
+	</body>
+</html>

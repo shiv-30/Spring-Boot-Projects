@@ -1,0 +1,6 @@
+package com.apigateway.controller;
+
+@RestController
+public class FallbackController {
+
+}

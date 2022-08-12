@@ -1,0 +1,50 @@
+server:
+   port: 9040
+   
+      
+eureka:
+   client:
+      service-url:
+         defaultZone: http://localhost:9030/eureka
+         
+   instance:
+      preferIpAddress: true
+      hostname: localhost
+      
+spring:
+  application:
+     name: api-getway
+  cloud:
+    gateway:
+      routes:
+      - id: user-service
+        uri: http://localhost:9010
+        predicates:
+        - Path=/users/**
+        filters:
+           - name: CircuitBreaker
+             args: 
+                name: user-service
+                fallbackuri: forward:/userServiceFallback
+                
+                
+      - id: contact-service
+        uri: http://localhost:9020
+        predicates:
+        - Path=/contact/**
+        filters:
+           - name: CircuitBreaker
+             args:
+                name: contact-service
+                fallbackuri: forward:/contactServiceFallback
+ 
+ 
+hystrix:
+   command:
+      fallbackcmd:
+         execution:
+            isolation:
+               thread:
+                  timeoutMilliseconds: 5000
+                  
+          

@@ -1,0 +1,12 @@
+<!doctype>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>New Customer</title>
+	</head>
+	<body>
+		<h1> New Customer Registration </h1>
+		<form th:action="@{/customerRegistration}" th:object="${customer}">
+			<input type="text" name="name" />
+		</form>
+	</body>
+</html>

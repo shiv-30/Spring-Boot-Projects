@@ -1,0 +1,13 @@
+<!doctype>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>DEMO</title>
+	</head>
+	<body>
+		
+		<h1 th:text="${customer.id}"> </h1>
+		<h
+		
+		
+	</body>
+</html>

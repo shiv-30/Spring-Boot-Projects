@@ -1,0 +1,34 @@
+package 
+import com.application.client.MyClient;
+import com.application.server.MyServer;
+import java.io.IOException;
+import java.util.Scanner;
+
+
+
+public class ChatApplicationMain {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Name : ");
+		String name = sc.nextLine();
+		System.out.println("IP Port: ");
+		String port = sc.nextLine();
+		String choice = "";
+		do {
+		System.out.println("Are you the host? [y/n] : ");
+		choice = sc.next();
+		if(choice.equals("y")||choice.equals("n")) break;
+		else System.out.println("Invalid choice!");
+		}while(true);
+		if(choice.equals("y")) MyServer.main(new String[]{name,port});
+		else {
+			System.out.println("IP :");
+			String ip = sc.nextLine();
+			MyClient.main(new String[]{name,ip,port});
+		}
+		sc.close();
+	}
+
+}

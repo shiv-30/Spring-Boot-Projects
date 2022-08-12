@@ -1,0 +1,39 @@
+package com.example.demo.controller;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.demo.models.Customer;
+import com.example.demo.repository.CustomerRepository;
+
+@Controller
+public class HomeController {
+	
+	@Autowired
+	private CustomerRepository customerRepo;
+	
+	@GetMapping("/all")
+	private String  getAllCustomers(Model model) {
+		List<Customer> customerList =  customerRepo.findAll();
+		model.addAttribute("customerList", customerList);
+		return "home.html";
+	}
+	
+	@GetMapping("/customer/{id}")
+	private String getUserById(@PathVariable Long id, Model model) {
+		Optional<Customer> customer = customerRepo.findById(id);
+		Customer cust = customer.get();
+		model.addAttribute("customer", cust);
+		return "customer.html";
+		
+	}
+	
+	
+	
+}

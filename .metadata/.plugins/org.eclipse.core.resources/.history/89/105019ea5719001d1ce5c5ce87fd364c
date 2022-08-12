@@ -1,0 +1,6 @@
+package com.springsecurity.controller;
+
+@Controller
+public class TestController {
+	
+}

@@ -1,0 +1,16 @@
+<!doctype>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Success</title>
+	</head>
+	<body>
+		<h1 style="text-align:center; color: green; font-size: 2rem;">Successfully Login</h1>
+		<input type="submit" name="all" onclick="all()">
+		
+	</body>
+	<script>
+		function all() {
+			windows.
+		}
+	</script>
+</html>

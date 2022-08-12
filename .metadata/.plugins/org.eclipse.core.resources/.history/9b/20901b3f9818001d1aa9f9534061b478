@@ -1,0 +1,18 @@
+<!doctype>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title th:text=${customer.name}></title>
+	</head>
+	<body>
+		<h1>Welcome !!</h1>
+		<h2 th:text="${customer.id}"> </h2>
+		<h2 th:text="${customer.name}"></h2>
+		<h2 th:text="${customer.email}"></h2>
+		<p th:if="${alert == "
+	</body>
+	<script>
+		function hello() {
+			alert("JavaScript is envoked")
+		}
+	</script>
+</html>

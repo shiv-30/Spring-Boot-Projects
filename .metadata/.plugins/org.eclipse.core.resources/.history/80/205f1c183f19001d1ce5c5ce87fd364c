@@ -1,0 +1,14 @@
+<!doctype>
+<html>
+	<head>
+		<title>Registration</title>
+	</head>
+	<body>
+		<h1 style="text-align:center;">Registration Form</h1>
+		<form method="POST" action="">
+			User name: <input name="username" type="text" required>
+			Email: <input name="email" type="email" required>
+			Password: <input name=""
+		</form>		
+	</body>
+</html>

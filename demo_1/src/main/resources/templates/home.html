@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>DEMO</title>
+	</head>
+	<body>
+		Hello World
+		 <ul>
+        	<th:block th:each="user : ${users}">
+            	<a th:href="@{/user/{id}(id = ${user.id})}"><li th:utext="${user.name}"></li></a>
+         	</th:block>
+         </ul>
+	</body>
+</html>
